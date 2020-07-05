@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="br.sofex.com.cameratexture">
+    <!--
+      Declara um único recurso de hardware ou software usado pelo aplicativo.
+      O propósito de uma declaração <uses-feature> é informar todas as entidades externas sobre o
+      conjunto de recursos de hardware e software de que depende o aplicativo.
+      O elemento oferece um atributo required que permite especificar se o aplicativo exige
+      e não funciona sem o recurso declarado ou se prefere dispor do recurso, mas pode funcionar sem ele.
+    -->
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".CameraPreview.CamPreview"></activity>
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+    <uses-feature
+        android:name="android.hardware.camera2"
+        android:required="true" />
+
+    <uses-permission
+        android:name="android.permission.CAMERA"
+        android:required="true" />
+
+</manifest>
